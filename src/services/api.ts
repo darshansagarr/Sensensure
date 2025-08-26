@@ -8,7 +8,8 @@ const axiosInstance = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
-  withCredentials: true,
+  // don't send cookies/credentials by default — using Authorization header instead
+  withCredentials: false,
 });
 
 // Add auth token to requests with proper type checking
@@ -64,23 +65,5 @@ export const apiService = {
       throw error.response?.data || { message: 'Failed to fetch device data' };
     }
   },
-  //   getSensorData: async (deviceId: string) => {
-//     try {
-//       const response = await axiosInstance.get(`/api/sensors/${deviceId}`);
-//       return response.data;
-//     } catch (error: any) {
-//       throw error.response?.data || { message: 'Failed to fetch sensor data' };
-//     }
-//   },
-// };
-
-  // toggleDevice: async (deviceId: string, device: string, status: boolean) => {
-  //   try {
-  //     const response = await axiosInstance.post(`/api/devices/${deviceId}/toggle`, { device, status });
-  //     return response.data;
-  //   } catch (error: any) {
-  //     throw error.response?.data || { message: 'Failed to toggle device' };
-  //   }
-  // },
 };
 export default apiService;
