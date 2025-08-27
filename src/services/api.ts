@@ -65,5 +65,6 @@ export const apiService = {
       throw error.response?.data || { message: 'Failed to fetch device data' };
     }
   },
+
 };
 export default apiService;
