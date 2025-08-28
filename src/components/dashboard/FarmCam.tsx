@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const BACKEND_BASE_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5001';
+const BACKEND_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
 
 const FarmCam: React.FC = () => {
   const [rtspUrl, setRtspUrl] = useState('');
