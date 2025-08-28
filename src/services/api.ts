@@ -7,6 +7,7 @@ const axiosInstance = axios.create({
   baseURL: BASE_URL,
   headers: {
     'Content-Type': 'application/json',
+    'ngrok-skip-browser-warning': '1'
   },
   // don't send cookies/credentials by default — using Authorization header instead
   withCredentials: false,
